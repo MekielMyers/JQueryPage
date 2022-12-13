@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upcoming Events</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Unbounded&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Chivo+Mono&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.13.2/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
+    <script>
+    $( function() {
+    $( "#accordion" ).accordion({
+      collapsible: true
+    });
+  } );
+        $( function() {
+        $( "#datepicker" ).datepicker();
+        } );
+            $( function() {
+            $( document ).tooltip();
+            } );
+            $( function() {
+    // run the currently selected effect
+    function runEffect() {
+      // get effect type from
+      var selectedEffect = $( "#effectTypes" ).val();
+ 
+      // Most effect types need no options passed by default
+      var options = {};
+      // some effects have required parameters
+      if ( selectedEffect === "scale" ) {
+        options = { percent: 50 };
+      } else if ( selectedEffect === "size" ) {
+        options = { to: { width: 200, height: 60 } };
+      }
+ 
+      // Run the effect
+      $( "#effect" ).toggle( selectedEffect, options, 500 );
+    };
+ 
+    // Set effect from select menu value
+    $( "#button" ).on( "click", function() {
+      runEffect();
+    });
+  } );
+    </script>
+    <style>
+        *{
+            margin: 0;
+        }
+        body{
+            background-image: url('/Images/nMexico.png');
+            background-repeat: no-repeat;
+        }
+        
+        .top{
+            font-family: 'Unbounded', cursive;
+            text-shadow: 1px 1px black;
+        }
+
+        #map:hover{
+            width: 700px;
+            height: 350px;
+            transition: 1s;
+           
+        }
+        #accordion{
+            position:absolute;
+            left:calc(50vw - 450px);
+            top:65vh;
+            width: 900px;
+            height: 300px;
+            font-size: 20px;
+        }
+        ul{
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+            
+        }
+        li{
+            float: right;
+        }
+        li a{
+            font-size: 30px;
+            display: block;
+            color: rgb(0, 0, 0);
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        li a:hover {
+        background-color: rgba(135, 206, 250, 0.444);
+        }
+        .toggler {
+            width: 500px;
+            height: 200px;
+        }
+        #button {
+            padding: .5em 1em;
+            text-decoration: none;
+        }
+        #effect {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            background-color: rgba(240, 248, 255, 0);
+            position: relative;
+            width: 240px;
+            height: 170px;
+            padding: 0.4em;
+            border: none;
+        }
+        #effect h3 {
+            margin: 0;
+            padding: 0.4em;
+            text-align: center;
+        }
+        .imgy{
+            padding: 5px;
+            
+        }
+        .imgy:hover{
+            transition: 1s;
+            transform: scale(1.25);
+        }
+        .des{
+            margin-top: 100px;
+            margin-left: 300px;
+            height: 400px;
+            width: 900px;
+            color: white;
+            font-family: 'Chivo Mono', monospace;
+            text-align: justify;
+            font-size: 22px;
+            text-shadow: 1px 1px black;
+        }
+        .gal{
+            margin-left: 250px;
+            margin-top: 300px;
+            z-index: 2;
+        }
+        .buttons{
+            display: flex;
+            flex-direction: column;
+            margin-left: 400px;
+            margin-bottom: 100px;
+        }
+        #logo{
+            z-index: 5;
+            margin-left: 150px;
+        }
+    </style>
+
+</head>
+<body>
+    <ul class="top">
+        <li><a class="active" href="#home">Home</a></li>
+        <li><a href="#Contact">Contact</a></li>
+        <li><a href="#bookNow">Book Now<input type="text" id="datepicker"></a></li>
+        <li><a href="#Albuquerque">Albuquerque</a></li>
+        <img id="logo" src="/Images/nMexilogo.png" height="65px" width="65px">
+    </ul>
+    
+    <div class="des">New Mexico is a state located in the southwestern United States. It is bordered by Colorado to the north, Texas to the east, Oklahoma to the northeast, Arizona to the west, and Mexico to the south. The state has a diverse landscape, with mountains, forests, deserts, and grasslands. The capital of New Mexico is Santa Fe, and the largest city is Albuquerque. The state is known for its rich cultural heritage, with a strong Native American presence and influences from Spanish and Mexican cultures. It is also home to several national parks and monuments, including Carlsbad Caverns National Park and the White Sands National Monument.</div>
+
+    <div id='accordion'>
+            <h3>What are some places to visit in New Mexico</h3>
+        <div>
+                <p>
+                    <ul>
+                        <ol><a href="#" title="The park covers 145,762 acres in the Tularosa Basin, including the southern 41% of a 275 sq mi field of white sand dunes composed of gypsum crystals.">White Sands National Park</a></ol>
+                        <ol><a href="#" title="The traditional Navajo name for this peak is Tse' Bit' A'i, meaning &quot;rock with wings&quot; - relating to the two dikes extending north and south.">Tse Bitai (Shiprock)</a></ol>
+                        <ol><a href="#" title="Roswell is well known not only for aliens, but for their hospitality in welcoming new businesses (while supporting existing ones) and visitors alike.">Roswell</a></ol>
+                        <ol><a href="#" title="Chihuahuan Desert of southern New Mexico, it features more than 100 caves.">Carlsbad Caverns National Park</a></ol>
+                        <ol><a href="#" title="The monument preserves the homes and territory of the Ancestral Puebloans of a later era in the Southwest.">Bandelier National Monument</a></ol>
+                        </ul>
+                </p>
+            </div>
+        <h3>Where is Los Pollos Hermanos</h3>
+            <div>
+                <p><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d158265.79270517375!2d-106.7023911576177!3d35.06113038394974!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87220dcd5329c5df%3A0xf41c13e4a542c05d!2sLos%20Pollos%20Hermanos!5e0!3m2!1sen!2sus!4v1670542899636!5m2!1sen!2sus" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            </div>
+        <h3>Where is the Breaking Bad House?</h3>
+            <div>
+                <p><iframe id="map" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3263.221573992496!2d-106.53873408255615!3d35.1261438!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x87227557938908eb%3A0x723dd3cf63dbb051!2s3828%20Piermont%20Dr%20NE%2C%20Albuquerque%2C%20NM%2087111!5e0!3m2!1sen!2sus!4v1670628728430!5m2!1sen!2sus" width="300" height="150" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe></p>
+            </div>
+    </div>
+    <div class="gal">
+    <div class="toggler">
+        <div id="effect" class="ui-widget-content ui-corner-all">
+          <img class="imgy" src="/Images/whiteDunes.jpg" height="150px" width="300px">
+          <img class="imgy" src="/Images/rockFormation.jpg" height="150px" width="300px">
+          <img class="imgy" src="/Images/Roswell.png" height="150px" width="300px">
+          <img class="imgy" src="/Images/Pueblos.png" height="150px" width="300px">
+        </div>
+    <select class="buttons" name="effects" id="effectTypes">
+        <option value="blind">Blind</option>
+        <option value="bounce">Bounce</option>
+        <option value="clip">Clip</option>
+        <option value="drop">Drop</option>
+        <option value="explode">Explode</option>
+        <option value="fade">Fade</option>
+        <option value="fold">Fold</option>
+        <option value="highlight">Highlight</option>
+        <option value="puff">Puff</option>
+        <option value="pulsate">Pulsate</option>
+        <option value="scale">Scale</option>
+        <option value="shake">Shake</option>
+        <option value="size">Size</option>
+        <option value="slide">Slide</option>
+      </select>
+       <div class="buttons">
+      <button id="button" class="ui-state-default ui-corner-all" >Run Effect</button>
+      </div>
+      </div>
+</body>
+</html>
